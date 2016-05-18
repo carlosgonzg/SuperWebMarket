@@ -1,36 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace super.web.market.dal
 {
-    public class City
+    [DataContract]
+    public class City : Model
     {
-        private int _code;
         private string _description;
         private int _provinceId;
+
         //constructor
         public City()
         {
-            this._code = 0;
             this._description = "";
         }
-        //property Code
-        public int Code
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DataMember]
+        public override int Id
         {
-            get { return this._code; }
-            set { this._code = value; }
+            get; set;
         }
+
         //property Description
+        [DataMember]
         public string Description
         {
             get { return this._description; }
             set { this._description = value; }
         }
+
         //property Country
+        [DataMember]
         public int ProvinceId
         {
             get { return this._provinceId; }

@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("super.web.market.dal")]
+[assembly: AssemblyTitle("super.web.market.bll")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("super.web.market.dal")]
+[assembly: AssemblyProduct("super.web.market.bll")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6d14def3-9758-4279-88fd-179e2f9c1e73")]
+[assembly: Guid("cd30b8fa-5752-45de-9482-13b22b251512")]
 
 // Version information for an assembly consists of the following four values:
 //

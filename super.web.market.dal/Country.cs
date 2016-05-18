@@ -1,34 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace super.web.market.dal
 {
-    public class Country
+    [DataContract]
+    public class Country : Model
     {
-        private int _code;
         private string _description;
+
         //constructor
         public Country()
         {
-            this._code = 0;
+            _id = 0;
             this._description = "";
         }
-        //property Code
-        public int Code
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DataMember]
+        public override int Id
         {
-            get { return this._code; }
-            set { this._code = value; }
+            get; set;
         }
+
         //property Description
+        [MaxLength(100)]
+        [DataMember]
         public string Description
         {
             get { return this._description; }
             set { this._description = value; }
         }
+
         //property Provinces
+        [NotMapped]
         public virtual ICollection<Province> Provinces { get; set; }
+
+        public override void Validate()
+        {
+            if (Description == "")
+            {
+                throw new Exception("Invalid Data");
+            }
+        }
     }
 }

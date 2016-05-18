@@ -1,45 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.Web.Script.Serialization;
 
 namespace super.web.market.dal
 {
-    public class Province
+    [DataContract]
+    public class Province : Model
     {
-        private int _code;
         private string _description;
         private int _countryId;
+
         //constructor
         public Province()
         {
-            this._code = 0;
-            this._description = "";
+            _description = "";
         }
-        //property Code
-        public int Code
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DataMember]
+        public override int Id
         {
-            get { return this._code; }
-            set { this._code = value; }
+            get; set;
         }
+
         //property Description
+        [DataMember]
         public string Description
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return _description; }
+            set { _description = value; }
         }
+
         //property Country
-        public int CountryId {
-            get { return this._countryId; }
-            set { this._countryId = value; }
+        [DataMember]
+        public int CountryId
+        {
+            get { return _countryId; }
+            set { _countryId = value; }
         }
 
         [ForeignKey("CountryId")]
+        [ScriptIgnore]
         public virtual Country Country { get; set; }
 
         //property Cities
+        [NotMapped]
         public virtual ICollection<City> Cities { get; set; }
     }
 }

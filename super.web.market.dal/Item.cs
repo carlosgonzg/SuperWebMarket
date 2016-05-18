@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace super.web.market.dal
 {
@@ -11,8 +7,7 @@ namespace super.web.market.dal
         private string _name;
         private string _description;
         private List<Category> _category;
-        private List<Photo> _photos;
+        private List<string> _photos;
         //constructor
-
     }
 }
