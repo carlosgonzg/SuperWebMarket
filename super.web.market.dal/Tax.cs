@@ -5,19 +5,25 @@ using System.Runtime.Serialization;
 namespace super.web.market.dal
 {
     [DataContract]
-    public class Category : Model
+    public class Tax : Model
     {
+        private float _percentage;
         private string _description;
-
-        public Category()
+        public Tax()
         {
-            _description = "";
+
         }
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DataMember]
         public override int Id
         {
             get; set;
+        }
+        [DataMember]
+        public float Percentage
+        {
+            get { return _percentage; }
+            set { _percentage = value; }
         }
         [DataMember]
         public string Description

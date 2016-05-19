@@ -23,6 +23,12 @@ namespace super.web.market.dal
         public DbSet<Country> Countries { get; set; }
         public DbSet<Province> Provinces { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Tax> Taxes { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Photo> Photos { get; set; }
+        public DbSet<ItemCategory> ItemsCategories { get; set; }
+        public DbSet<ItemTax> ItemsTaxes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,6 +37,12 @@ namespace super.web.market.dal
             modelBuilder.Entity<Country>().ToTable("Countries");
             modelBuilder.Entity<Province>().ToTable("Provinces");
             modelBuilder.Entity<City>().ToTable("Cities");
+            modelBuilder.Entity<Item>().ToTable("Items");
+            modelBuilder.Entity<Tax>().ToTable("Taxes");
+            modelBuilder.Entity<Category>().ToTable("Categories");
+            modelBuilder.Entity<Photo>().ToTable("Photos");
+            modelBuilder.Entity<ItemCategory>().ToTable("ItemsCategories");
+            modelBuilder.Entity<ItemTax>().ToTable("ItemsTaxes");
         }
     }
 }

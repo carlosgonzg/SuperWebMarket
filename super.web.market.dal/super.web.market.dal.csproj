@@ -67,11 +67,15 @@
     <Compile Include="Country.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemCategory.cs" />
+    <Compile Include="ItemTax.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="PhoneType.cs" />
+    <Compile Include="Photo.cs" />
     <Compile Include="Province.cs" />
+    <Compile Include="Tax.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
