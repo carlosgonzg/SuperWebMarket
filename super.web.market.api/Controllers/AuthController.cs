@@ -4,6 +4,7 @@ using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Results;
 
@@ -19,11 +20,13 @@ namespace super.web.market.api.Controllers
         [Route("")]
         public async Task<IHttpActionResult> Get()
         {
-            return Ok(new ReturnData(CodeStatus.Ok, "Todo Bien"));
+            var user = _authHandler.GetActualUser();
+            // var user = HttpContext.Current.GetOwinContext().Get<ApplicationUse>().
+            var retData = new ReturnData(CodeStatus.Ok, "User extracted");
+            retData.Data = user;
+            return Ok(retData);
         }
 
-        //LOGIN
-        // POST: api/Auth
         [AllowAnonymous]
         [HttpPost]
         [Route("Register")]

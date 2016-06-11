@@ -27,8 +27,8 @@ namespace super.web.market.api
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                TokenEndpointPath = new PathString("/login"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
                 Provider = new AuthorizationServerProvider()
             };
 
